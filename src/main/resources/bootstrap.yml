@@ -1,0 +1,19 @@
+server:
+  port: 12344
+
+spring:
+  application:
+    name: consumer
+  cloud:
+    config:
+      # 可以根据profile 修改生产、测试的配置，也可以根据label（分支）修改，最好根据分支修改配置
+      profile: dev
+      label: master
+      # 不加此项，使用的是8888端口，最好指定
+      uri: http://localhost:7001
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
